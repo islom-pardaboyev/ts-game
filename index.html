@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TS Game</title>
+    <!-- google fonts (poppins) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="font-poppins">
+    <section class="w-screen h-screen flex items-center justify-center">
+      <div
+        class="grid grid-cols-4 w-[90vw] rounded-3xl h-[90vh] border border-black gap-4"
+      >
+        <div
+          class="col-span-2 border-r border-black p-5 flex flex-col justify-between"
+        >
+          <div>
+            <h1 class="font-bold text-xl">Player-1</h1>
+            <h1 class="font-bold text-xl">
+              Score: <span id="totalScore">0</span>
+            </h1>
+          </div>
+          <h1 class="text-center font-bold text-8xl" id="showScoreP1"></h1>
+          <button
+            id="firstPlayerButton"
+            class="border-2 disabled:opacity-50 disabled:hover-none disabled:cursor-not-allowed border-black rounded-md duration-300 enabled:hover:bg-sky-500 text-xl bg-gray-300 mx-auto px-6 py-1"
+            onclick="player1Start()"
+          >
+            Click
+          </button>
+        </div>
+        <div
+          class="col-span-2 border-r border-black p-5 flex flex-col justify-between"
+        >
+          <div>
+            <h1 class="font-bold text-xl">Player-2</h1>
+            <h1 class="font-bold text-xl">
+              Score: <span id="totalScoreP2">0</span>
+            </h1>
+          </div>
+          <h1 class="text-center font-bold text-8xl" id="showScoreP2"></h1>
+          <button
+            id="secondPlayerButton"
+            class="border-2 disabled:opacity-50 disabled:hover-none disabled:cursor-not-allowed border-black rounded-md duration-300 enabled:hover:bg-sky-500 text-xl bg-gray-300 mx-auto px-6 py-1"
+            onclick="player2Start()"
+          >
+            Click
+          </button>
+        </div>
+      </div>
+      <div id="modal"
+        class="fixed scale-0 duration-300 top-0 left-0 w-screen flex items-center justify-center backdrop-blur-md h-screen"
+      >
+        <div
+          style="box-shadow: -1px -2px 50px -8px rgba(0, 0, 0, 0.75)"
+          class="w-[50vw] bg-white h-[50vh] p-10 rounded-md flex flex-col justify-between"
+        >
+            <h1 class="capitalize text-center font-bold text-2xl text-red-500">
+              game over!!
+            </h1>
+            <p id="playerWin" class="text-center font-bold text-5xl">
+              
+            </p>
+          <button onclick="restartGame()"
+            class="mx-auto px-6 py-2 hover:scale-125 duration-300 hover:bg-green-500 rounded-full bg-rose-600 text-white font-medium"
+          >
+            Restart Game
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              poppins: ["Poppins", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+    <script src="./app/js/index.js"></script>
+  </body>
+</html>
